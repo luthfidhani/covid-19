@@ -69,8 +69,6 @@
             // method: 'post',
             url: 'https://api.kawalcorona.com/indonesia',
             dataType: 'JSONP',
-            jsonpCallback: 'callbackFnc',
-            async: false,
             crossDomain: true
         }).done(function(result) {
             var positive = result[0].positif + " orang";
