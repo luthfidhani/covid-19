@@ -68,8 +68,7 @@
         $.ajax({
             // method: 'post',
             url: 'https://api.kawalcorona.com/indonesia',
-            dataType: 'JSONP',
-            crossDomain: true
+            dataType: 'JSONP'
         }).done(function(result) {
             var positive = result[0].positif + " orang";
             var recovery = result[0].sembuh + " orang";
