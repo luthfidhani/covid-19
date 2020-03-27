@@ -48,10 +48,10 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
 <script src="js/bootstrap.min.js "></script>
-<script src="js/xdomain.js "></script>
 <script>
     const monthNames = ["Januari ", "Februari ", "Maret ", "April ", "Mei ", "Juni ",
         "Juli ", "Augustus ", "September ", "Oktober ", "November ", "Desember "
@@ -65,10 +65,15 @@
 </script>
 
 <script>
+    // Cookies.set('_xsrf', '2|2213a69a|31507defbc439e61c1683d79aaf0a42c|1584496288')
+    // Cookies.set('__cfduid', 'dfecc7a342b20c0266de9cc600f6434281585130473')
+</script>
+
+<script>
     $(function() {
         $.ajax({
-            // method: 'post',
-            url: 'https://api.kawalcorona.com/indonesia'
+            url: 'https://api.kawalcorona.com/indonesia/',
+            type: 'GET',
         }).done(function(result) {
             var positive = result[0].positif + " orang";
             var recovery = result[0].sembuh + " orang";
@@ -79,6 +84,31 @@
         });
     });
 </script>
+
+<!-- <script>
+    function get_data_rek_covid() {
+        $.ajax({
+                url: 'https://api.kawalcorona.com/indonesia/...',
+                type: 'GET',
+                crossDomain: true,
+                dataType: 'json',
+            })
+            .done(function(e) {
+                console.log(e);
+                // $.each(e, function(index, el) {
+                // console.log(el.attributes.Provinsi);
+                // });
+                // createTableInfo(e)
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+    }
+</script> -->
 
 <script>
     // $("#result").load("https://api.kawalcorona.com/indonesia");
